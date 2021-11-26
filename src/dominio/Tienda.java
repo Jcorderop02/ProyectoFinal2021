@@ -10,12 +10,22 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 
 /**
- *
  * @author Juan Cordero
  * @author Javier Martinez
  * @version 1.0 25/11/21
  */
 package dominio;
 
+import java.util.ArrayList;
+
 public class Tienda {
+    private ArrayList<Television> coleccionTelevisores = new ArrayList<>();
+
+    public ArrayList<Television> getColeccionTelevisores() {
+        return coleccionTelevisores;
+    }
+
+    public void setColeccionTelevisores(ArrayList<Television> coleccionTelevisores) {
+        this.coleccionTelevisores = coleccionTelevisores;
+    }
 }

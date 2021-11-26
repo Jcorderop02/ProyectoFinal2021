@@ -10,8 +10,8 @@ _Las siguientes instrucciones permitirán obtener una copia del proyecto en func
 
 ### Progresos
 
-- [ ] Uso de cadenas de caracteres y de números. 
-- [ ] Uso de al menos 3 atributos.
+- [x] Uso de cadenas de caracteres y de números. 
+- [x] Uso de al menos 3 atributos.
 - [ ] Alta de productos.
 - [ ] Lectura de los productos.
 - [ ] Baja de productos.
