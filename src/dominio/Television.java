@@ -33,11 +33,11 @@ public class Television {
     }
 
     /**
-     * Constructor que hace los seters de nombre modelo marca y pulgadas
+     * Constructor que establece el nombre, modelo, marca y pulgadas
      *
      * @param nombre   Es el nombre de la televisión
      * @param modelo   Es el modelo de la televisión
-     * @param marca    Es la marcade la televisión
+     * @param marca    Es la marca de la televisión
      * @param pulgadas Son las pulgadas de la televisión
      */
     public Television(String nombre, String modelo, String marca, int pulgadas) {
