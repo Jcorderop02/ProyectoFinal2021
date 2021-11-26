@@ -23,7 +23,7 @@ public class Television {
     int pulgadas = 0;
 
     /**
-     * Método para obetner el nombre de la televisión
+     * Método para obtener el nombre de la televisión
      * @return nombre de la televisión
      */
     public String getNombre() {
@@ -40,7 +40,7 @@ public class Television {
 
     /**
      * Método para obtener el modelo de la televisión
-     * @return modelo de la television
+     * @return modelo de la televisión
      */
     public String getModelo() {
         return modelo;
@@ -55,7 +55,7 @@ public class Television {
     }
 
     /**
-     * Método para obtener el número de pulgadas de la Televisión
+     * Método para obtener el número de pulgadas de la televisión
      * @return pulgadas que tiene la televisión
      */
     public int getPulgadas() {
