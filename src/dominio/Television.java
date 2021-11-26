@@ -22,26 +22,50 @@ public class Television {
     String modelo = "";
     int pulgadas = 0;
 
+    /**
+     * Método para obetner el nombre de la televisión
+     * @return nombre de la televisión
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * Método para establecer el nombre de la televisión
+     * @param nombre nuevo de la televisión
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     * Método para obtener el modelo de la televisión
+     * @return modelo de la television
+     */
     public String getModelo() {
         return modelo;
     }
 
+    /**
+     * Método para establecer el modelo de la televisión
+     * @param modelo nuevo modelo de la televisión
+     */
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
+    /**
+     * Método para obtener el número de pulgadas de la Televisión
+     * @return pulgadas que tiene la televisión
+     */
     public int getPulgadas() {
         return pulgadas;
     }
 
+    /**
+     * Método para establecer las pulgadas de la televisión
+     * @param pulgadas nuevas pulgadas del televisor
+     */
     public void setPulgadas(int pulgadas) {
         this.pulgadas = pulgadas;
     }

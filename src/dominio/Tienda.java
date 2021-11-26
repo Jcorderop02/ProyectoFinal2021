@@ -21,10 +21,18 @@ import java.util.ArrayList;
 public class Tienda {
     private ArrayList<Television> coleccionTelevisores = new ArrayList<>();
 
+    /**
+     * Método para obtener los televisores de la ArrayList
+     * @return coleccionTelevisores nombre de los televisores
+     */
     public ArrayList<Television> getColeccionTelevisores() {
         return coleccionTelevisores;
     }
 
+    /**
+     * Método para establecer televisores en la ArrayList
+     * @param coleccionTelevisores nuevos nombres de los televisores
+     */
     public void setColeccionTelevisores(ArrayList<Television> coleccionTelevisores) {
         this.coleccionTelevisores = coleccionTelevisores;
     }
