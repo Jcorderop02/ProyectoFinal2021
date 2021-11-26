@@ -18,9 +18,10 @@ limitations under the License.*/
 package dominio;
 
 public class Television {
-    String nombre = "";
-    String modelo = "";
-    int pulgadas = 0;
+    private String nombre;
+    private String modelo;
+    private String marca;
+    private int pulgadas =0;
 
     /**
      * Método para obtener el nombre de la televisión
@@ -36,6 +37,22 @@ public class Television {
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    /**
+     * Método para obtener la marca de la televisión
+     * @return marca de la televisión
+     */
+    public String getMarca() {
+        return marca;
+    }
+
+    /**
+     * Método para establecer la marca de la televisión
+     * @param marca nuevo de la televisión
+     */
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
     /**
@@ -69,4 +86,23 @@ public class Television {
     public void setPulgadas(int pulgadas) {
         this.pulgadas = pulgadas;
     }
+
+    /**
+     * Constructor que hace los seters de nombre modelo marca y pulgadas
+     * @param nombre Es el nombre de la televisión
+     * @param modelo Es el modelo de la televisión
+     * @param marca Es la marcade la televisión
+     * @param pulgadas Son las pulgadas de la televisión
+     */
+
+
+    public Television(String nombre, String modelo, String marca, int pulgadas) {
+        this.nombre = nombre;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.pulgadas = pulgadas;
+
+    }
 }
+
+
