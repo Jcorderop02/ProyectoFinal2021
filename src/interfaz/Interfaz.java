@@ -22,7 +22,7 @@ import dominio.*;
 import java.io.FileWriter;
 
 public class Interfaz {
-
+    //El objetivo del texto es ayudar a los usuarios.
     private static String TEXTO_AYUDA ="De esta forma se añaden una television a la tienda: java -jar tienda.jar add TV Q95TD 189 cm 4K Smart TV (2021) Samsung 80 QLED \r\n"
             + "\r\n"
             + "De esta forma se ve la tienda: java -jar tienda.jar tienda\r\n"
@@ -31,6 +31,10 @@ public class Interfaz {
             + "";
     private static String FICHERO_TXT = "tienda.txt";
 
+    /**
+     * Metodo estático que inicializa el archivo txt
+     * @param tienda  Importa la tienda para annadirlo luego en el archivo txt
+     */
     private static void inicializarFichero(Tienda tienda){
         try{
             FileWriter fw = new FileWriter(FICHERO_TXT);
