@@ -17,14 +17,16 @@ limitations under the License.*/
 package aplicacion;
 
 import dominio.*;
+import interfaz.Interfaz;
 
 public class Principal {
     /**
      * Método que inicializa el programa
+     *
      * @param args argumentos que se pasan
      */
     public static void main(String[] args) {
-        Television television = new Television();
+       /* Television television = new Television();
         television.setNombre("TV Q95TD 189 cm 4K Smart TV (2021)");
         television.setMarca("Samsung");
         television.setPulgadas(80);
@@ -41,5 +43,13 @@ public class Principal {
         tienda.annadirTelevision(television2);
 
         System.out.println(tienda);
+    }*/
+
+        String sentencia = "";
+        for (String arg : args) {
+            sentencia += arg + " ";
+        }
+        Interfaz.procesarPeticion(sentencia);
     }
 }
+

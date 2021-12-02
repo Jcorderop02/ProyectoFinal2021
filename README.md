@@ -1,6 +1,6 @@
 # Catálogo de Televisores
 
-_El propósito de este proyecto es poder guardar, visualizar y agregar nuevas prendas de ropa con su marca, talla y precio._
+_El propósito de este proyecto es poder guardar, visualizar y agregar nuevas televisiones con su nombre, modelo, marca y pulgadas._
 
 ---
 ## Inicio
@@ -12,7 +12,7 @@ _Las siguientes instrucciones permitirán obtener una copia del proyecto en func
 
 - [x] Uso de cadenas de caracteres y de números. 
 - [x] Uso de al menos 3 atributos.
-- [ ] Alta de productos.
+- [x] Alta de productos.
 - [ ] Lectura de los productos.
 - [ ] Baja de productos.
 - [ ] Modificación de productos.

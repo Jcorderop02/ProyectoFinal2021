@@ -24,7 +24,7 @@ public class Tienda {
     /**
      * Método para añadir un producto a la tienda
      *
-     * @param television television a añadir
+     * @param television Television a añadir
      */
     public void annadirTelevision(Television television) {
         coleccionTelevisores.add(television);
@@ -33,7 +33,7 @@ public class Tienda {
     /**
      * Método para obtener los televisores de la ArrayList
      *
-     * @return coleccionTelevisores nombre de los televisores
+     * @return Nombre de los televisores
      */
     public ArrayList<Television> getColeccionTelevisores() {
         return coleccionTelevisores;
@@ -42,7 +42,7 @@ public class Tienda {
     /**
      * Método para establecer televisores en la ArrayList
      *
-     * @param coleccionTelevisores nuevos nombres de los televisores
+     * @param coleccionTelevisores Nuevos nombres de los televisores
      */
     public void setColeccionTelevisores(ArrayList<Television> coleccionTelevisores) {
         this.coleccionTelevisores = coleccionTelevisores;

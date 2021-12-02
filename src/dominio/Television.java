@@ -17,76 +17,40 @@ limitations under the License.*/
 package dominio;
 
 public class Television {
-    private String nombre;
     private String modelo;
-    private String marca;
+    private String tipoDePantalla;
     private int pulgadas;
+    private int año;
 
     /**
      * Constructor sin parámetros
      */
     public Television() {
-        nombre = "";
         modelo = "";
-        marca = "";
+        tipoDePantalla = "";
         pulgadas = 0;
+        año = 0;
     }
 
     /**
-     * Constructor que establece el nombre, modelo, marca y pulgadas
+     * Constructor que establece el nombre, modelo, tipoDePantalla y pulgadas
      *
-     * @param nombre   Es el nombre de la televisión
-     * @param modelo   Es el modelo de la televisión
-     * @param marca    Es la marca de la televisión
-     * @param pulgadas Son las pulgadas de la televisión
+     * @param modelo         Es el modelo de la televisión
+     * @param tipoDePantalla Es la tipoDePantalla de la televisión
+     * @param pulgadas       Son las pulgadas de la televisión
+     * @param año            Año del modelo de la television
      */
-    public Television(String nombre, String modelo, String marca, int pulgadas) {
-        this.nombre = nombre;
-        this.marca = marca;
+    public Television(String modelo, String tipoDePantalla, int pulgadas, int año) {
         this.modelo = modelo;
+        this.tipoDePantalla = tipoDePantalla;
         this.pulgadas = pulgadas;
-    }
-
-    /**
-     * Método para obtener el nombre de la televisión
-     *
-     * @return nombre de la televisión
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * Método para establecer el nombre de la televisión
-     *
-     * @param nombre nuevo de la televisión
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     * Método para obtener la marca de la televisión
-     *
-     * @return marca de la televisión
-     */
-    public String getMarca() {
-        return marca;
-    }
-
-    /**
-     * Método para establecer la marca de la televisión
-     *
-     * @param marca nuevo de la televisión
-     */
-    public void setMarca(String marca) {
-        this.marca = marca;
+        this.año = año;
     }
 
     /**
      * Método para obtener el modelo de la televisión
      *
-     * @return modelo de la televisión
+     * @return Modelo de la televisión
      */
     public String getModelo() {
         return modelo;
@@ -95,16 +59,34 @@ public class Television {
     /**
      * Método para establecer el modelo de la televisión
      *
-     * @param modelo nuevo modelo de la televisión
+     * @param modelo Nuevo modelo de la televisión
      */
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
     /**
+     * Método para obtener el tipoDePantalla de la televisión
+     *
+     * @return Tipo de pantalla de la televisión
+     */
+    public String getTipoDePantalla() {
+        return tipoDePantalla;
+    }
+
+    /**
+     * Método para establecer la marca de la televisión
+     *
+     * @param tipoDePantalla Nuevo de la televisión
+     */
+    public void setTipoDePantalla(String tipoDePantalla) {
+        this.tipoDePantalla = tipoDePantalla;
+    }
+
+    /**
      * Método para obtener el número de pulgadas de la televisión
      *
-     * @return pulgadas que tiene la televisión
+     * @return Pulgadas que tiene la televisión
      */
     public int getPulgadas() {
         return pulgadas;
@@ -113,19 +95,38 @@ public class Television {
     /**
      * Método para establecer las pulgadas de la televisión
      *
-     * @param pulgadas nuevas pulgadas del televisor
+     * @param pulgadas Pulgadas del televisor
      */
     public void setPulgadas(int pulgadas) {
         this.pulgadas = pulgadas;
     }
 
     /**
+     * Método para obtener el año de la televisión
+     *
+     * @return Año de la television
+     */
+    public int getAño() {
+        return año;
+    }
+
+    /**
+     * Método para establecer el año del televisor
+     *
+     * @param año Año del televisor
+     */
+    public void setAño(int año) {
+        this.año = año;
+    }
+
+    /**
      * Método para devolver la información de la clase en formato String
-     * @return información en formato string
+     *
+     * @return Información en formato string
      */
     public String toString() {
-        return "Marca: " + marca + "\n" + "Nombre: " + nombre + "\n" +
-                "Modelo: " + modelo + "\n" + "Pulgadas: " + pulgadas;
+        return "Modelo: " + modelo + "\n" + "Tipo De Pantalla: " + tipoDePantalla + "\n" +
+                "Pulgadas: " + pulgadas + "\n" + "Año: " + año;
     }
 }
 
