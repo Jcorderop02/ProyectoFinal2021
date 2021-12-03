@@ -51,7 +51,7 @@ public class Tienda {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (Television television : coleccionTelevisores) {
-            sb.append(television);
+            sb.append(television.toString() + "\n");
         }
         return sb.toString();
     }

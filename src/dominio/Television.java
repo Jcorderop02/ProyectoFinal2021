@@ -28,8 +28,8 @@ public class Television {
     public Television() {
         modelo = "";
         tipoDePantalla = "";
-        pulgadas = 0;
-        año = 0;
+        pulgadas = Integer.parseInt("");
+        año = Integer.parseInt("");
     }
 
     /**
@@ -125,8 +125,8 @@ public class Television {
      * @return Información en formato string
      */
     public String toString() {
-        return "Modelo: " + modelo + "\n" + "Tipo De Pantalla: " + tipoDePantalla + "\n" +
-                "Pulgadas: " + pulgadas + "\n" + "Año: " + año;
+        return "Modelo: " + modelo + " " + "Tipo-De-Pantalla: "
+                + tipoDePantalla + " " + "Pulgadas: " + pulgadas + " " + "Año: " + año;
     }
 }
 

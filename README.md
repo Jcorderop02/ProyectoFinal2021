@@ -13,7 +13,7 @@ _Las siguientes instrucciones permitirán obtener una copia del proyecto en func
 - [x] Uso de cadenas de caracteres y de números. 
 - [x] Uso de al menos 3 atributos.
 - [x] Alta de productos.
-- [ ] Lectura de los productos.
+- [x] Lectura de los productos.
 - [ ] Baja de productos.
 - [ ] Modificación de productos.
 - [ ] Generación de una hoja de cálculo con el catálogo.
@@ -39,7 +39,26 @@ make jar
 ---
 ## Ejecutar pruebas
 
-_En desarollo_
+_Para poder ejecutar pruebas del programa, deberá seguir las siguientes instrucciones:_
+
+-   Para poder ver la lista de tiendas con sus televisiones que hay en la lista.
+```
+java -jar tienda.jar list
+```
+-   Para mostrar la ayuda. Se mostrará una guía más específica de que comandos se pueden ejecutar.
+```
+java -jar tienda.jar help
+```
+-   Para añadir una television cualquiera.
+```
+java -jar tienda.jar add <Modelo> <TipoDePantalla> <Pulgadas> <Año>
+```
+```
+tales como,
+```
+```
+java -jar tienda.jar add Samsung QLED 80 2021
+```
 
 ## Notas para los desarolladores
 

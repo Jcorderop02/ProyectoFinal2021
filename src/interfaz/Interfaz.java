@@ -18,7 +18,11 @@ package interfaz;
 
 import dominio.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Interfaz {
 
@@ -34,7 +38,7 @@ public class Interfaz {
             FileWriter fw = new FileWriter(FICHERO_TXT);
             fw.write(tienda.toString());
             fw.close();
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e);
             System.out.println("No se ha podido guardar el archivo");
         }
@@ -47,20 +51,57 @@ public class Interfaz {
      */
     public static void procesarPeticion(String sentencia) {
         String[] args = sentencia.split(" ");
+        Tienda tienda = inicializarTienda();
+        if (args[0].equals("help")) {
+            printHelp();
+        } else if (args[0].equals("list")) {
+            if (tienda.toString().equals("")) {
+                System.out.println("No hay ningún producto en la tienda");
+            } else {
+                System.out.println(tienda);
+            }
+        } else if (args[0].equals("add")) {
+            if (args.length == 5) {
+                try {
+                    Television tele = new Television(args[1], args[2], Integer.parseInt(args[3]), Integer.parseInt(args[4]));
+                    tienda.annadirTelevision(tele);
+                    inicializarFichero(tienda);
+                } catch (NumberFormatException e) {
+                    System.out.println("Se ha introducido una palabra en vez de un numero en alguno de los dos últimos argumentos");
+                }
+            } else {
+                System.out.println("Se ha introducido mas o menos de los argumentos necesarios." + " Revisa lo que has escrito");
+            }
+        }
+    }
+
+    /**
+     * Método para cargar los datos del fichero
+     *
+     * @return Objeto Tienda
+     */
+    private static Tienda inicializarTienda() {
         Tienda tienda = new Tienda();
         try {
-            if (args[0].equals("help")) {
-                printHelp();
-            } else if (args[0].equals("list")) {
-
-            } else if (args[0].equals("add")) {
-                Television tele = new Television(args[1], args[2], Integer.parseInt(args[3]), Integer.parseInt(args[4]));
-                tienda.annadirTelevision(tele);
-                inicializarFichero(tienda);
+            File file = new File(FICHERO_TXT);
+            Scanner sc = new Scanner(file);
+            while (sc.hasNext()) {
+                String nombreModelo = sc.next();
+                String modelo = sc.next();
+                String nombreTipoDePantalla = sc.next();
+                String tipoDePantalla = sc.next();
+                String nombrePulgadas = sc.next();
+                int pulgadas = Integer.parseInt(sc.next());
+                String nombreAño = sc.next();
+                int año = Integer.parseInt(sc.next());
+                Television television = new Television(modelo, tipoDePantalla, pulgadas, año);
+                tienda.annadirTelevision(television);
             }
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("");
+            sc.close();
+        } catch (FileNotFoundException e) {
+            inicializarFichero(tienda);
         }
+        return tienda;
     }
 
     /**
