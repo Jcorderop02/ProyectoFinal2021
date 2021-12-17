@@ -105,6 +105,9 @@ public class Interfaz {
                 System.out.println("Se ha introducido más o menos de los argumentos necesarios." + " Revisa lo que has escrito");
                 System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
             }
+        } else {
+            System.out.println("¡El argumento principal introducido no es correcto!");
+            System.out.println("Introduzca java -jar tienda.jar help para ver los comandos disponibles");
         }
     }
 

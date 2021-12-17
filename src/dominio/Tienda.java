@@ -24,12 +24,32 @@ public class Tienda {
     private ArrayList<Television> coleccionTelevisores = new ArrayList<>();
 
     /**
-     * Método para añadir un producto a la tienda
+     * Método para añadir una televisión a la tienda
      *
      * @param television Television a añadir
      */
     public void annadirTelevision(Television television) {
         coleccionTelevisores.add(television);
+    }
+
+    /**
+     * Método para borrar una television de la tienda
+     *
+     * @param televisionABorrar Televisión a borrar
+     */
+    public void borrarProducto(Television televisionABorrar) {
+        boolean borrado = false;
+        for (int i = coleccionTelevisores.size() - 1; i >= 0; i--) {
+            if (coleccionTelevisores.get(i).toString().equals(coleccionTelevisores.toString())) {
+                coleccionTelevisores.remove(i);
+                borrado = true;
+            }
+        }
+        if (borrado) {
+            System.out.println(coleccionTelevisores.toString() + " se ha borrado");
+        } else {
+            System.out.println(coleccionTelevisores.toString() + " no existe ese producto en la lista");
+        }
     }
 
     /**
