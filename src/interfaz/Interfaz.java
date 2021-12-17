@@ -60,6 +60,7 @@ public class Interfaz {
             if (tienda.toString().equals("")) {
                 System.out.println("No hay ningún producto en la tienda");
             } else {
+                System.out.println("Esta es la lista de productos: ");
                 System.out.println(tienda);
             }
         } else if (args[0].equals("add")) {
@@ -68,6 +69,7 @@ public class Interfaz {
                     Television tele = new Television(args[1], args[2], Integer.parseInt(args[3]), Integer.parseInt(args[4]));
                     tienda.annadirTelevision(tele);
                     inicializarFichero(tienda);
+                    System.out.println("Se ha guardado correctamente el producto");
                 } catch (NumberFormatException e) {
                     System.out.println("Se ha introducido una palabra en vez de un numero en alguno de los dos últimos argumentos");
                 }
