@@ -24,11 +24,29 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Interfaz {
 
     private static String FICHERO_TXT = "tienda.txt";
+
+    /**
+     * Metodo para comprobar si los argumentos no son numeros
+     *
+     * @param aValidar Lista de argumentos
+     * @return True si ninguno es un numero, false en caso contrario
+     */
+    private static boolean validarArgs(ArrayList<String> aValidar) {
+        for (String s : aValidar) {
+            try {
+                Integer.parseInt(s);
+                return false;
+            } catch (Exception ignored) {
+            }
+        }
+        return true;
+    }
 
     /**
      * Metodo estático que inicializa el archivo txt
@@ -66,15 +84,26 @@ public class Interfaz {
         } else if (args[0].equals("add")) {
             if (args.length == 5) {
                 try {
-                    Television tele = new Television(args[1], args[2], Integer.parseInt(args[3]), Integer.parseInt(args[4]));
-                    tienda.annadirTelevision(tele);
-                    inicializarFichero(tienda);
-                    System.out.println("Se ha guardado correctamente el producto");
+                    ArrayList<String> aValidar = new ArrayList<>();
+                    aValidar.add(args[1]);
+                    aValidar.add(args[2]);
+
+                    if (validarArgs(aValidar)) {
+                        Television tele = new Television(args[1], args[2], Integer.parseInt(args[3]), Integer.parseInt(args[4]));
+                        tienda.annadirTelevision(tele);
+                        inicializarFichero(tienda);
+                        System.out.println("Se ha guardado correctamente el producto");
+                    } else {
+                        System.out.println("¡Alguno de los argumentos introducidos es incorrecto!");
+                        System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
+                    }
                 } catch (NumberFormatException e) {
                     System.out.println("Se ha introducido una palabra en vez de un numero en alguno de los dos últimos argumentos");
+                    System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
                 }
             } else {
-                System.out.println("Se ha introducido mas o menos de los argumentos necesarios." + " Revisa lo que has escrito");
+                System.out.println("Se ha introducido más o menos de los argumentos necesarios." + " Revisa lo que has escrito");
+                System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
             }
         }
     }
