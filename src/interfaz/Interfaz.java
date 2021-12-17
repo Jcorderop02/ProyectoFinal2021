@@ -105,6 +105,29 @@ public class Interfaz {
                 System.out.println("Se ha introducido más o menos de los argumentos necesarios." + " Revisa lo que has escrito");
                 System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
             }
+        } else if (args[0].equals("remove")) {
+            if (args.length == 5) {
+                try {
+                    ArrayList<String> aValidar = new ArrayList<>();
+                    aValidar.add(args[1]);
+                    aValidar.add(args[2]);
+
+                    if (validarArgs(aValidar)) {
+                        Television tele = new Television(args[1], args[2], Integer.parseInt(args[3]), Integer.parseInt(args[4]));
+                        tienda.borrarTelevision(tele);
+                        inicializarFichero(tienda);
+                    } else {
+                        System.out.println("¡Alguno de los argumentos introducidos es incorrecto!");
+                        System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Se ha introducido una palabra en vez de un numero en alguno de los dos últimos argumentos");
+                    System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
+                }
+            } else {
+                System.out.println("Se ha introducido más o menos de los argumentos necesarios." + " Revisa lo que has escrito");
+                System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
+            }
         } else {
             System.out.println("¡El argumento principal introducido no es correcto!");
             System.out.println("Introduzca java -jar tienda.jar help para ver los comandos disponibles");

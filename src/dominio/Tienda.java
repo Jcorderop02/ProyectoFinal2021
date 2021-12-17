@@ -37,18 +37,18 @@ public class Tienda {
      *
      * @param televisionABorrar Televisión a borrar
      */
-    public void borrarProducto(Television televisionABorrar) {
+    public void borrarTelevision(Television televisionABorrar) {
         boolean borrado = false;
         for (int i = coleccionTelevisores.size() - 1; i >= 0; i--) {
-            if (coleccionTelevisores.get(i).toString().equals(coleccionTelevisores.toString())) {
+            if (coleccionTelevisores.get(i).toString().equals(televisionABorrar.toString())) {
                 coleccionTelevisores.remove(i);
                 borrado = true;
             }
         }
         if (borrado) {
-            System.out.println(coleccionTelevisores.toString() + " se ha borrado");
+            System.out.println(televisionABorrar.toString() + " se ha borrado");
         } else {
-            System.out.println(coleccionTelevisores.toString() + " no existe ese producto en la lista");
+            System.out.println(televisionABorrar.toString() + " no existe ese producto en la lista");
         }
     }
 

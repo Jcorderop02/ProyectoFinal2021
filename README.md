@@ -16,7 +16,7 @@ propósitos de desarrollo y pruebas del mismo._
 - [x] Uso de al menos 3 atributos.
 - [x] Alta de productos.
 - [x] Lectura de los productos.
-- [ ] Baja de productos.
+- [x] Baja de productos.
 - [ ] Modificación de productos.
 - [ ] Generación de una hoja de cálculo con el catálogo.
 
@@ -70,6 +70,20 @@ tales como,
 
 ```
 java -jar tienda.jar add Samsung QLED 80 2021
+```
+
+- Para borrar una television cualquiera.
+
+```
+java -jar tienda.jar remove <Modelo> <TipoDePantalla> <Pulgadas> <Año>
+```
+
+```
+tales como,
+```
+
+```
+java -jar tienda.jar remove Samsung QLED 80 2021
 ```
 
 ## Notas para los desarolladores
