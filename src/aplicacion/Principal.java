@@ -10,6 +10,8 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 
 /**
+ * Clase que procesa la petición entrante de la terminal
+ *
  * @author Juan Cordero
  * @author Javier Martinez
  * @version 1.0 25/11/21

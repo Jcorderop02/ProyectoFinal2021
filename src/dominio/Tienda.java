@@ -10,6 +10,8 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 
 /**
+ * Clase que contiene la ArrayList de las televisiones con sus respectivos métodos para añadir las televisiones a la tienda
+ *
  * @author Juan Cordero
  * @author Javier Martinez
  * @version 1.0 25/11/21

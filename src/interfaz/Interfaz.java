@@ -10,6 +10,8 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 
 /**
+ * Clase que contiene los métodos para procesar las peticiones entrantes de la terminal, la inicializacion del fichero y la lectura del fichero
+ *
  * @author Juan Cordero
  * @author Javier Martinez
  * @version 1.0 25/11/21

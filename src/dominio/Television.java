@@ -10,6 +10,8 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 
 /**
+ * Clase que contiene los parámetros que tiene la television con sus constructures, getters y setters
+ *
  * @author Juan Cordero
  * @author Javier Martinez
  * @version 1.0 25/11/21
@@ -20,7 +22,7 @@ public class Television {
     private String modelo;
     private String tipoDePantalla;
     private int pulgadas;
-    private int año;
+    private int anno;
 
     /**
      * Constructor sin parámetros
@@ -28,8 +30,8 @@ public class Television {
     public Television() {
         modelo = "";
         tipoDePantalla = "";
-        pulgadas = Integer.parseInt("");
-        año = Integer.parseInt("");
+        pulgadas = 0;
+        anno = 0;
     }
 
     /**
@@ -38,13 +40,13 @@ public class Television {
      * @param modelo         Es el modelo de la televisión
      * @param tipoDePantalla Es la tipoDePantalla de la televisión
      * @param pulgadas       Son las pulgadas de la televisión
-     * @param año            Año del modelo de la television
+     * @param anno           Año del modelo de la television
      */
-    public Television(String modelo, String tipoDePantalla, int pulgadas, int año) {
+    public Television(String modelo, String tipoDePantalla, int pulgadas, int anno) {
         this.modelo = modelo;
         this.tipoDePantalla = tipoDePantalla;
         this.pulgadas = pulgadas;
-        this.año = año;
+        this.anno = anno;
     }
 
     /**
@@ -104,19 +106,19 @@ public class Television {
     /**
      * Método para obtener el año de la televisión
      *
-     * @return Año de la television
+     * @return Anno de la television
      */
-    public int getAño() {
-        return año;
+    public int getAnno() {
+        return anno;
     }
 
     /**
      * Método para establecer el año del televisor
      *
-     * @param año Año del televisor
+     * @param anno Año del televisor
      */
-    public void setAño(int año) {
-        this.año = año;
+    public void setAnno(int anno) {
+        this.anno = anno;
     }
 
     /**
@@ -126,7 +128,7 @@ public class Television {
      */
     public String toString() {
         return "Modelo: " + modelo + " " + "Tipo-De-Pantalla: "
-                + tipoDePantalla + " " + "Pulgadas: " + pulgadas + " " + "Año: " + año;
+                + tipoDePantalla + " " + "Pulgadas: " + pulgadas + " " + "Año: " + anno;
     }
 }
 
