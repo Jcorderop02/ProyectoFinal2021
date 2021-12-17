@@ -32,7 +32,7 @@ public class Interfaz {
     private static String FICHERO_TXT = "tienda.txt";
 
     /**
-     * Metodo para comprobar si los argumentos no son numeros
+     * Método para comprobar si los argumentos no son números
      *
      * @param aValidar Lista de argumentos
      * @return True si ninguno es un numero, false en caso contrario
@@ -49,7 +49,7 @@ public class Interfaz {
     }
 
     /**
-     * Metodo estático que inicializa el archivo txt
+     * Método estático que inicializa el archivo txt
      *
      * @param tienda Importa la tienda para annadirlo luego en el archivo txt
      */
