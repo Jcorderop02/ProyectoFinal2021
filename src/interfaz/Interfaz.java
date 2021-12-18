@@ -151,9 +151,9 @@ public class Interfaz {
                 String tipoDePantalla = sc.next();
                 String nombrePulgadas = sc.next();
                 int pulgadas = Integer.parseInt(sc.next());
-                String nombreAño = sc.next();
-                int año = Integer.parseInt(sc.next());
-                Television television = new Television(modelo, tipoDePantalla, pulgadas, año);
+                String nombreAnno = sc.next();
+                int anno = Integer.parseInt(sc.next());
+                Television television = new Television(modelo, tipoDePantalla, pulgadas, anno);
                 tienda.annadirTelevision(television);
             }
             sc.close();
