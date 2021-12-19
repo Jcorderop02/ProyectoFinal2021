@@ -77,4 +77,11 @@ public class Tienda {
         }
         return sb.toString();
     }
+    public String toCSV() {
+        StringBuilder sb = new StringBuilder();
+        for (Television television : coleccionTelevisores) {
+            sb.append(television.toString() + "\n");
+        }
+        return sb.toString();
+    }
 }
