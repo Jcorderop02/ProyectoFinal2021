@@ -99,9 +99,9 @@ public class Interfaz {
         } else if (args[0].equals("list")) {
             if (args.length == 1) {
                 if (tienda.toString().equals("")) {
-                    System.out.println("No hay ningún producto en la tienda");
+                    System.out.println("No hay ninguna television en la tienda");
                 } else {
-                    System.out.println("Esta es la lista de productos: ");
+                    System.out.println("Esta es la lista de televisiones: ");
                     System.out.println(tienda);
                 }
             } else {
@@ -127,7 +127,7 @@ public class Interfaz {
                         Television tele = new Television(args[1], args[2], Integer.parseInt(args[3]), Integer.parseInt(args[4]));
                         tienda.annadirTelevision(tele);
                         inicializarFichero(tienda);
-                        System.out.println("Se ha guardado correctamente el producto");
+                        System.out.println("Se ha guardado correctamente la television");
                     } else {
                         System.out.println("¡Alguno de los argumentos introducidos es incorrecto!");
                         System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
