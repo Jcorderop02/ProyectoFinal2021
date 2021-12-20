@@ -131,9 +131,13 @@ public class Television {
                 + tipoDePantalla + " " + "Pulgadas: " + pulgadas + " " + "Año: " + anno;
     }
 
+    /**
+     * Método para devolver la información de la clase en formato CSV
+     *
+     * @return Información en formato CSV
+     */
     public String toCSV() {
-        return "Modelo: " + modelo + " " + "Tipo-De-Pantalla: "
-                + tipoDePantalla + " " + "Pulgadas: " + pulgadas + " " + "Año: " + anno;
+        return modelo + "," + tipoDePantalla + "," + pulgadas + "," + anno;
     }
 }
 

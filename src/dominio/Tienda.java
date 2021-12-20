@@ -52,6 +52,12 @@ public class Tienda {
         }
     }
 
+    /**
+     * Método para reemplazar una television por otra television de la tienda
+     *
+     * @param tAntiguo Television antigua
+     * @param tNuevo Television nueva que reemplazará a la antigua
+     */
     public void reemplazarTelevision(Television tAntiguo, Television tNuevo){
         boolean modificar = false;
         for (int i = coleccionTelevisores.size()-1; i >=0; i--){
@@ -85,6 +91,11 @@ public class Tienda {
         this.coleccionTelevisores = coleccionTelevisores;
     }
 
+    /**
+     * Método para devolver la información de la clase en formato String
+     *
+     * @return Información en formato string
+     */
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (Television television : coleccionTelevisores) {
@@ -92,10 +103,17 @@ public class Tienda {
         }
         return sb.toString();
     }
+
+    /**
+     * Método para devolver la información de la clase en formato CSV
+     *
+     * @return Información en formato CSV
+     */
     public String toCSV() {
         StringBuilder sb = new StringBuilder();
+        sb.append("modelo, tipo de pantalla, pulgadas, año" + "\n");
         for (Television television : coleccionTelevisores) {
-            sb.append(television.toString() + "\n");
+            sb.append(television.toCSV() + "\n");
         }
         return sb.toString();
     }

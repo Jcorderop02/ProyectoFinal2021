@@ -52,7 +52,7 @@ public class Interfaz {
     /**
      * Método estático que inicializa el archivo txt
      *
-     * @param tienda Importa la tienda para annadirlo luego en el archivo txt
+     * @param tienda Importa la tienda para añadirlo luego en el archivo txt
      */
     private static void inicializarFichero(Tienda tienda) {
         try {
@@ -65,12 +65,17 @@ public class Interfaz {
         }
     }
 
-    private static void generarCSV(Tienda tienda){
-        try{
+    /**
+     * Método estático que genera el archivo csv
+     *
+     * @param tienda Importa la tienda para añadirlo en el archivo csv
+     */
+    private static void generarCSV(Tienda tienda) {
+        try {
             FileWriter fw = new FileWriter(FICHERO_CSV);
             fw.write(tienda.toCSV());
             fw.close();
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             System.out.println("No se ha podido guardar el archivo");
         }
@@ -85,13 +90,31 @@ public class Interfaz {
         String[] args = sentencia.split(" ");
         Tienda tienda = inicializarTienda();
         if (args[0].equals("help")) {
-            printHelp();
-        } else if (args[0].equals("list")) {
-            if (tienda.toString().equals("")) {
-                System.out.println("No hay ningún producto en la tienda");
+            if (args.length == 1) {
+                printHelp();
             } else {
-                System.out.println("Esta es la lista de productos: ");
-                System.out.println(tienda);
+                System.out.println("Se ha introducido más o menos de los argumentos necesarios." + " Revisa lo que has escrito");
+                System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
+            }
+        } else if (args[0].equals("list")) {
+            if (args.length == 1) {
+                if (tienda.toString().equals("")) {
+                    System.out.println("No hay ningún producto en la tienda");
+                } else {
+                    System.out.println("Esta es la lista de productos: ");
+                    System.out.println(tienda);
+                }
+            } else {
+                System.out.println("Se ha introducido más o menos de los argumentos necesarios." + " Revisa lo que has escrito");
+                System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
+            }
+        } else if (args[0].equals("csv")) {
+            if (args.length == 1) {
+                generarCSV(tienda);
+                System.out.println("Se ha generado el CSV");
+            } else {
+                System.out.println("Se ha introducido más o menos de los argumentos necesarios." + " Revisa lo que has escrito");
+                System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
             }
         } else if (args[0].equals("add")) {
             if (args.length == 5) {
@@ -141,7 +164,7 @@ public class Interfaz {
                 System.out.println("Teclee java -jar tienda.jar help para ver los parámetros necesarios.");
             }
         } else if (args[0].equals("editar")) {
-            if (args.length == 5) {
+            if (args.length == 9) {
                 try {
                     ArrayList<String> aValidar = new ArrayList<>();
                     aValidar.add(args[1]);
@@ -205,11 +228,12 @@ public class Interfaz {
      * Método que contiene las instrucciones de como usar la tienda
      */
     public static void printHelp() {
-        System.out.println("De esta forma se añaden una television a la tienda: java -jar tienda.jar add modelo tipoDePantalla pulgadas año \r\n"
-                + "\r\n"
-                + "De esta forma se ve la tienda: java -jar tienda.jar list\r\n"
-                + "\r\n"
-                + "De esta forma se muestra la ayuda: java -jar tienda.jar help\r\n"
-                + "");
+        System.out.println("Los comandos que se pueden utilizar son los siguientes:" + "\n" +
+                "- Para mostrar la información de todas las televisiones: java -jar tienda.jar list" + "\n" +
+                "- Para añadir una television cualquiera: java -jar tienda.jar add <Modelo> <Tipo-De-Pantalla> <Pulgadas> <Año>" + "\n" +
+                "- Para borrar una television: java -jar tienda.jar remove <Modelo> <Tipo-De-Pantalla> <Pulgadas> <Año>" + "\n" +
+                "- Para modificar una television: java -jar tienda.jar editar <Modelo> <Tipo-De-Pantalla>" +
+                " <Pulgadas> <Año> <modeloNuevo> <tipo-De-Pantalla-Nueva> <pulgadasNuevas> <nuevoAño>" + "\n" +
+                "- Para generar el csv: java -jar tienda.jar csv");
     }
 }

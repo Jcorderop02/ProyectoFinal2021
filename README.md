@@ -17,8 +17,8 @@ propósitos de desarrollo y pruebas del mismo._
 - [x] Alta de productos.
 - [x] Lectura de los productos.
 - [x] Baja de productos.
-- [ ] Modificación de productos.
-- [ ] Generación de una hoja de cálculo con el catálogo.
+- [x] Modificación de productos.
+- [x] Generación de una hoja de cálculo con el catálogo.
 
 ### Pre-requisitos
 
@@ -58,6 +58,12 @@ java -jar tienda.jar list
 java -jar tienda.jar help
 ```
 
+- Para generar el fichero csv
+
+```
+java -jar tienda.jar csv
+```
+
 - Para añadir una television cualquiera.
 
 ```
@@ -85,6 +91,19 @@ tales como,
 ```
 java -jar tienda.jar remove Samsung QLED 80 2021
 ```
+
+- Para editar una television cualquiera.
+
+```
+java -jar tienda.jar editar <Modelo> <TipoDePantalla> <Pulgadas> <Año> <ModeloNuevo> <TipoDePantallaNueva> <PulgadasNueva> <AñoNuevo>
+```
+
+```
+tales como,
+```
+
+```
+java -jar tienda.jar editar Samsung QLED 80 2021 Philips NanoCell 50 2020
 
 ## Notas para los desarolladores
 
