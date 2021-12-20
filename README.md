@@ -105,6 +105,8 @@ tales como,
 ```
 java -jar tienda.jar editar Samsung QLED 80 2021 Philips NanoCell 50 2020
 
+```
+
 ## Notas para los desarolladores
 
 ---
