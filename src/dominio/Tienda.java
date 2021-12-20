@@ -52,6 +52,21 @@ public class Tienda {
         }
     }
 
+    public void reemplazarTelevision(Television tAntiguo, Television tNuevo){
+        boolean modificar = false;
+        for (int i = coleccionTelevisores.size()-1; i >=0; i--){
+            if (coleccionTelevisores.get(i).toString().equals(tAntiguo.toString())){
+                coleccionTelevisores.set(i, tNuevo);
+                modificar = true;
+            }
+        }
+        if (modificar){
+            System.out.println(tAntiguo.toString() + ", ha sido modificado por " + tNuevo.toString());
+        }else{
+            System.out.println(tAntiguo.toString() + " No existe ese producto en la lista");
+        }
+    }
+
     /**
      * Método para obtener los televisores de la ArrayList
      *
