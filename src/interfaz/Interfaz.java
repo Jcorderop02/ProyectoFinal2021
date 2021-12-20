@@ -29,7 +29,8 @@ import java.util.Scanner;
 
 public class Interfaz {
 
-    private static String FICHERO_TXT = "tienda.txt";
+    private static String FICHERO_TXT = "fichero.txt";
+    private static String FICHERO_CSV = "fichero.csv";
 
     /**
      * Método para comprobar si los argumentos no son números
@@ -59,6 +60,17 @@ public class Interfaz {
             fw.write(tienda.toString());
             fw.close();
         } catch (IOException e) {
+            System.out.println(e);
+            System.out.println("No se ha podido guardar el archivo");
+        }
+    }
+
+    private static void generarCSV(Tienda tienda){
+        try{
+            FileWriter fw = new FileWriter(FICHERO_CSV);
+            fw.write(tienda.toCSV());
+            fw.close();
+        } catch (Exception e){
             System.out.println(e);
             System.out.println("No se ha podido guardar el archivo");
         }
